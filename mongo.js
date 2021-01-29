@@ -10,7 +10,12 @@ const password = process.argv[2]
 const url =
   `mongodb+srv://a5317264:${password}@cluster0.tomrx.mongodb.net/phonebook-app?retryWrites=true&w=majority`
 
-mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true})
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+})
 
 const personScheme = new mongoose.Schema({
   name: String,
